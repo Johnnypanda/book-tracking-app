@@ -12,7 +12,8 @@ const SearchBooks = (props) => {
                 <div className="search-books-input-wrapper">
                     <DebounceInput debounceTimeout={300} 
                     minLength={2}
-                    onChange={event => this.setState({value: event.target.value})}
+                    placeholder="Search by title or author"
+                    onChange={props.updateSearchList}
                     />
                 </div>
             </div>
