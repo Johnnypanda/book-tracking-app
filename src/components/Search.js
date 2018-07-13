@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Book from './Book'
 import PropTypes from 'prop-types'
-import { Debounce } from 'react-debounce-input'
+import { DebounceInput } from 'react-debounce-input'
 
 const SearchBooks = (props) => {
     return (
@@ -10,9 +10,10 @@ const SearchBooks = (props) => {
             <div className="search-books-bar">
                 <Link to='/' className="close-search"> Close</Link>
                 <div className="search-books-input-wrapper">
-                    <Debounce time="400" handler="onChange">
-                        <input type="text" placeholder="Search by title or author" onChange={props.updateSearchList}/>
-                    </Debounce>
+                    <DebounceInput debounceTimeout={300} 
+                    minLength={2}
+                    onChange={event => this.setState({value: event.target.value})}
+                    />
                 </div>
             </div>
             <div className="search-books-results">
