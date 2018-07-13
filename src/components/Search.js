@@ -11,7 +11,6 @@ const SearchBooks = (props) => {
                 <Link to='/' className="close-search"> Close</Link>
                 <div className="search-books-input-wrapper">
                     <DebounceInput debounceTimeout={300} 
-                    minLength={2}
                     placeholder="Search by title or author"
                     onChange={props.updateSearchList}
                     />
